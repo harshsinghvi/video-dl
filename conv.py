@@ -1,6 +1,6 @@
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path as p
-from os import cpu_count
+from os import cpu_count,getcwd
 import ffmpeg
 
 class FFConcat:
@@ -85,5 +85,6 @@ class FFConcat:
             print('Sending {} batches to multi-processing.'.format(len(self.batches)))
             self.mp(self.combine_audio, self.batches)
 
-concat = FFConcat(path='downloads')
+current_path = getcwd()
+concat = FFConcat(path=current_path)
 concat.run()
