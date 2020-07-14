@@ -85,6 +85,6 @@ class FFConcat:
             print('Sending {} batches to multi-processing.'.format(len(self.batches)))
             self.mp(self.combine_audio, self.batches)
 
-current_path = getcwd()
+current_path = getcwd()+"/downloads"
 concat = FFConcat(path=current_path)
 concat.run()
