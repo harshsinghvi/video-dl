@@ -1,14 +1,18 @@
 from urllib.request import urlopen
 video_num = 1
 file_num = 1
-input_link=input
+
+inp_link = input()
+
 while True:
     
-    link = 'https://videos-a.jwpsrv.com/content/conversions/Ux8FajpR/videos/ti073qxr-32240523.mp4-{}.ts'.format(video_num)
+    append_str = '{}.ts'.format(video_num)
+    link = inp_link + append_str
     response_url = urlopen(link)
     if response_url.getcode() == 200:
+
         file_name = 'downloads/Lecture_{}.mp4'.format(file_num) 
-        print(file_name)
+
         with open(file_name,'wb') as f:
             f.write(response_url.read())
         video_num += 1
