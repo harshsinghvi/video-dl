@@ -9,7 +9,10 @@ while True:
     response_url = urlopen(link)
     if response_url.getcode() == 200:
         file_post = '{}.mp4'.format(file_num) 
-        file_name = file_pre + file_post
+        file_name = 'downloads/'+file_pre + file_post
+        time_escaped=video_num * 4
+        print(file_name,time_escaped," seconds")
+
         with open(file_name,'wb') as f:
             f.write(response_url.read())
         video_num += 1
