@@ -12,7 +12,9 @@ while True:
     if response_url.getcode() == 200:
 
         file_name = 'downloads/Lecture_{}.mp4'.format(file_num) 
-
+        time_escaped=video_num * 4
+        print(file_name,time_escaped," seconds")
+        
         with open(file_name,'wb') as f:
             f.write(response_url.read())
         video_num += 1
