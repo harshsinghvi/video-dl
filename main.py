@@ -3,6 +3,11 @@ video_num = 1
 file_num = 1
 inp_link = input('Enter link: ')
 file_pre = input('Enter File name: ')
+rm=inp_link.find('mp4-')+4
+rm_end=len(file_pre)
+inp_link=inp_link[:rm]
+# print(inp_link)
+
 while True:
     append_str = '{}.ts'.format(video_num)
     link = inp_link + append_str
@@ -20,3 +25,5 @@ while True:
     else:
         print('Exited')
         break
+
+# demo_link = https://videos-a.jwpsrv.com/content/conversions/Ux8FajpR/videos/kVgM3EV5-32240523.mp4-full.ts 
